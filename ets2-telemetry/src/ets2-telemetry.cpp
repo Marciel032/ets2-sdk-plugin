@@ -378,6 +378,8 @@ SCSAPI_RESULT scs_telemetry_init(const scs_u32_t version, const scs_telemetry_in
 
 	/*** REGISTER ALL TELEMETRY CHANNELS TO OUR SHARED MEMORY MAP ***/
 	registerChannel(CHANNEL_game_time, u32, telemPtr->tel_rev2.time_abs);
+	registerChannel(CHANNEL_next_rest_stop, s32, telemPtr->tel_rev12.timeToRest);
+
 	registerChannel(TRAILER_CHANNEL_connected, bool, telemPtr->tel_rev1.trailer_attached);
 
 	registerChannel(TRUCK_CHANNEL_speed, float, telemPtr->tel_rev1.speed);
@@ -385,7 +387,7 @@ SCSAPI_RESULT scs_telemetry_init(const scs_u32_t version, const scs_telemetry_in
 	registerChannel(TRUCK_CHANNEL_world_placement, dplacement, telemPtr->tel_rev1.coordinateX);
 	
 	registerChannel(TRUCK_CHANNEL_engine_gear, s32, telemPtr->tel_rev1.gear);
-	registerChannel(TRUCK_CHANNEL_displayed_gear, s32, telemPtr->tel_rev4.gearDashboard);
+	registerChannel(TRUCK_CHANNEL_displayed_gear, s32, telemPtr->tel_rev4.gearDashboard);	
 
 	registerChannel(TRUCK_CHANNEL_engine_rpm, float, telemPtr->tel_rev1.engineRpm);
 

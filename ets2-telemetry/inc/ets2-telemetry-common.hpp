@@ -7,7 +7,7 @@
 // - Shared memory map struct layout
 // - [..]
 
-#define ETS2_PLUGIN_REVID					5
+#define ETS2_PLUGIN_REVID					12
 
 #define ETS2_PLUGIN_LOGGING_ON				0
 #define ETS2_PLUGIN_LOGGING_SHAREDMEMORY	0
@@ -194,6 +194,11 @@ typedef struct ets2TelemetryMap_s
 		bool onJob;
 		bool jobFinished;
 	} tel_rev5;
+
+	struct
+	{
+		int timeToRest;
+	} tel_rev12;
 
 } ets2TelemetryMap_t;
 
